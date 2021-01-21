@@ -51,4 +51,10 @@ public class Controller implements Observer {
                 break;
         }
     }
+
+    @FXML
+    public void initialize(){
+        System.out.println(Runtime.version());
+        System.out.println(Runtime.getRuntime().availableProcessors());
+    }
 }
