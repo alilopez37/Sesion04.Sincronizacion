@@ -12,6 +12,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("view/root.fxml"));
         primaryStage.setTitle("App-Sincronización");
+        System.out.println("Main 2:" + Thread.currentThread().getName());
         Scene scene = new Scene(root);
         scene.setOnMouseClicked(event -> {
             System.out.println(event.getScreenX());
@@ -22,6 +23,8 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+
+        System.out.println("Main 1:" + Thread.currentThread().getName());
         launch(args);
     }
 }

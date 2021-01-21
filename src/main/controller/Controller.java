@@ -38,7 +38,7 @@ public class Controller implements Observer {
 
     @Override
     public synchronized void update(Observable o, Object arg) {
-
+        System.out.println("Controller:" + Thread.currentThread().getName());
         switch((String)arg){
             case "A":
                 barra.setLayoutX(110);
@@ -50,11 +50,18 @@ public class Controller implements Observer {
                 barra.setLayoutX(315);
                 break;
         }
+        try {
+            Thread.sleep(200);
+            System.out.println("Con 2:" + Thread.currentThread().getName());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     public void initialize(){
         System.out.println(Runtime.version());
+        System.out.println(System.getProperty("java.version"));
         System.out.println(Runtime.getRuntime().availableProcessors());
     }
 }

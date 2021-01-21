@@ -23,7 +23,7 @@ public class Letra extends Observable implements Runnable {
                 case 'A':
                     try {
                         semA.acquire();
-                        System.out.println("A");
+                        System.out.println("A" + Thread.currentThread().getName());
                         setChanged();
                         notifyObservers(String.valueOf(letra));
                         semB.release();
